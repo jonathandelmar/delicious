@@ -34,7 +34,6 @@ const addRecipeIngredients = (ingredients) => {
     }
     $('label', newIngredientItem).text(item);
   });
-  console.log(ingredientItem);
   ingredientItem.remove();
 }
 
@@ -43,8 +42,6 @@ if (urlParams.has('uuid')) {
   const uuid = urlParams.get('uuid');
 
   getRecipe(uuid).then(recipe => {
-    console.log(recipe);
-
     $('.breadcumb-area').attr('style', 'background-image: url(' + apiUrl + recipe.images.full + ');');
     $('.receipe-headline > h2').text(recipe.title);
     $('.receipe-headline > h4').text(recipe.description);
