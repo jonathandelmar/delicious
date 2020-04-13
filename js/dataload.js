@@ -59,3 +59,17 @@ const getIngredientSpecials = () => {
   return makeRequest(specialsApiUrl, 'GET')
           .then(request => JSON.parse(request.response));
 }
+
+/**
+ * Fetch ingredient specials from API source
+ * @return Promise with Object indeces as ingredientId
+ */
+const getIngredientSpecialsObj = () => {
+  return getIngredientSpecials().then(specials => {
+    const specialsObj = {};
+    specials.reverse().forEach(item => {
+      specialsObj[item.ingredientId] = item;
+    });
+    return specialsObj;
+  });
+}
