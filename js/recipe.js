@@ -24,7 +24,7 @@ const addRecipeDirections = (directions) => {
  */
 const addRecipeIngredients = (ingredients) => {
   const ingredientItem = $('.ingredient-item');
-  ingredients.forEach((ingredient) => {
+  ingredients.forEach((ingredient, index) => {
     let newIngredientItem = ingredientItem.clone();
     newIngredientItem.insertBefore(ingredientItem);
 
@@ -33,6 +33,10 @@ const addRecipeIngredients = (ingredients) => {
       item = ingredient.amount + ' ' + item;
     }
     $('label', newIngredientItem).text(item);
+
+    const ingredientId = 'ingredient' + (index+1);
+    $('input', newIngredientItem).attr('id', ingredientId);
+    $('label', newIngredientItem).attr('for', ingredientId);
   });
   ingredientItem.remove();
 }
