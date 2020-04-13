@@ -2,7 +2,6 @@
 getRecipes().then(recipes => {
   let recipeObj = $('.top-catagory-area-product');
   recipes.forEach((recipe) => {
-    console.log(recipe);
     let newRecipeObj = recipeObj.clone();
     newRecipeObj.insertAfter(recipeObj);
     $('.single-top-catagory > img', newRecipeObj).attr('src', apiUrl + recipe.images.full);
