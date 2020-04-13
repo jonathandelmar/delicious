@@ -13,7 +13,7 @@ const addRecipeDirections = (directions) => {
       instructions = '[Optional] ' + instructions;
     }
     $('p', newRecipeStep).text(instructions);
-    $('h4', newRecipeStep).text( (directions.length-index) + '.');
+    $('h4', newRecipeStep).text((index+1) + '.');
   });
   recipeStep.remove();
 }
@@ -30,7 +30,7 @@ const addRecipeIngredients = (ingredients) => {
 
     let item = ingredient.measurement + ' ' + ingredient.name;
     if (ingredient.amount) {
-      item = ingredient.amount + item;
+      item = ingredient.amount + ' ' + item;
     }
     $('label', newIngredientItem).text(item);
   });
