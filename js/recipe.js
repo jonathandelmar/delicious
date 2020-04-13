@@ -2,7 +2,7 @@
  * Add recipe directions to the page
  * @param {array} directions
  */
-const addRecipeDirections = (directions) => {
+const addRecipeDirections = directions => {
   const recipeStep = $('.single-preparation-step');
   directions.forEach((step, index) => {
     let newRecipeStep = recipeStep.clone();
@@ -22,7 +22,7 @@ const addRecipeDirections = (directions) => {
  * Add recipe ingredients to the page
  * @param {array} ingredients
  */
-const addRecipeIngredients = (ingredients) => {
+const addRecipeIngredients = ingredients => {
   const ingredientItem = $('.ingredient-item');
   ingredients.forEach((ingredient, index) => {
     let newIngredientItem = ingredientItem.clone();
