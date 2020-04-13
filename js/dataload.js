@@ -41,7 +41,7 @@ const getRecipes = () => {
  * Fetch a recipe from API source
  * @return Promise
  */
-const getRecipe = (uuid) => {
+const getRecipe = uuid => {
   return getRecipes().then(recipes => {
     for (let recipe of recipes) {
       if (recipe.uuid === uuid) {
@@ -52,10 +52,10 @@ const getRecipe = (uuid) => {
 }
 
 /**
- * Fetch special recipes from API source
+ * Fetch ingredient specials from API source
  * @return Promise
  */
-const getSpecialRecipes = () => {
+const getIngredientSpecials = () => {
   return makeRequest(specialsApiUrl, 'GET')
           .then(request => JSON.parse(request.response));
 }
